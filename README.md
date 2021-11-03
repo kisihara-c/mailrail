@@ -1,24 +1,33 @@
-# README
+# mailrail
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Mailrail is a simple mail reminder.
+You post text,and Mailrail will send at the time appointed.
 
-Things you may want to cover:
+## mail
+```
+subject : < remindText > 
 
-* Ruby version
+< remindText > ,someone reminds you.
 
-* System dependencies
+;) We are mailrail.c, a simple mail reminder.
+https://mailrail-c.herokuapp.com/
+Have a good life <3
+```
 
-* Configuration
+## table
+|mails||
+|-|-|
+|id|integer|
+|remindText|string|
+|mailAddress|string|
+|sendTime|datetime|
 
-* Database creation
+## version
+ruby 2.6.8p205
 
-* Database initialization
+## dev start
+```bash
+bundle install --without:production
+rails s
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
