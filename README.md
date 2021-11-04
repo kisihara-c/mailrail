@@ -38,7 +38,7 @@ Have a good dream <3
 |remind_str|string|
 |dest_address|string|
 |sending_at|datetime|
-|is_sent?|boolean|
+|is_sent|boolean|
 
 ## version
 ruby 2.6.8p205

@@ -1,0 +1,22 @@
+<h1>mailrail.c</h1>
+
+<%= form_with scope: :mailr, url: mailrs_path, local: true do |form| %>
+  <p>
+    <%= form.label :dest_address %><br>
+    <%= form.text_field :dest_address %>
+  </p>
+ 
+  <p>
+    <%= form.label :remind_str %><br>
+    <%= form.text_field :remind_str %>
+  </p>
+ 
+  <p>
+    <%= form.label :sending_at %><br>
+    <%= form.datetime_select :sending_at %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

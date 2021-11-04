@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  remind_str: MyString
+  dest_address: MyString
+  sending_at: 2021-11-05 08:19:38
+  is_sent: false
+
+two:
+  remind_str: MyString
+  dest_address: MyString
+  sending_at: 2021-11-05 08:19:38
+  is_sent: false
