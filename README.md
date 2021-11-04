@@ -52,4 +52,5 @@ rails s
 ```bash
 git remote add heroku https://git.heroku.com/mailrail-c.git
 git push heroku main
+heroku run rails db:migrate
 ```
