@@ -45,7 +45,11 @@ ruby 2.6.8p205
 
 ## dev start
 ```bash
-bundle install --without:production
+bundle install --without production
 rails s
 ```
 
+```bash
+git remote add heroku https://git.heroku.com/mailrail-c.git
+git push heroku main
+```
