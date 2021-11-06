@@ -6,8 +6,12 @@ class MailrsController < ApplicationController
 
     def create
         @mailr = Mailr.new(mailr_params)
-        @mailr.save
-        render plain: params[:mailr].inspect
+        if @mailr.save
+            MainMailer.confirm(@mailr).deliver_now
+            render plain: params[:mailr].inspect
+        else
+            render "おや？　何かがおかしいようです…"
+        end
     end
 
     private 
