@@ -6,6 +6,7 @@ class MailrsController < ApplicationController
 
     def create
         @mailr = Mailr.new(mailr_params)
+        @mailr.is_sent = false
         if @mailr.save
             MainMailer.confirm(@mailr).deliver_now
             render plain: params[:mailr].inspect

@@ -16,9 +16,9 @@ class MainMailer < ApplicationMailer
   #
   #   en.main_mailer.remind.subject
   #
-  def remind
-    @greeting = "Hi"
+  def remind(mailr)
+    @mailr = mailr
 
-    mail to: "to@example.org"
+    mail to: mailr.dest_address, subject: mailr.remind_str
   end
 end

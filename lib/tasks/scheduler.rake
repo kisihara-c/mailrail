@@ -1,17 +1,19 @@
 desc "called by the Heroku scheduler add-on"
-task  :test_scheduller => :enviroiment do
-    puts "scheduller test"
+task  :test_scheduler => :environment do
+    puts Mailr.first.dest_address
 end
 
-task :send_mailrs => :enviroiment do
+desc "sending mail"
+task :send_mailrs => :environment do
 
-    mailrs = Mailr.where(is_sent: false).where(sending_at <= Time.new)
+    mailrs = Mailr.where(is_sent: false).where("sending_at <= ?",Time.new)
+
+    mailrs.each do |m|
     
-    mailrs.each do |mailr|
-    
-        mail to: mailr.dest_address, subject: "test"
-        mailr.is_sent = true
-        mailr.save
+        puts "sending : " + m.dest_address
+        MainMailer.remind(m).deliver_now
+        m.is_sent = true
+        m.save
     
     end
 
