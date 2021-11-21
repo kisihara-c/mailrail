@@ -26,7 +26,9 @@ class MailrsController < ApplicationController
 
         if @mailr.save
             MainMailer.confirm(@mailr).deliver_now
+            retrun true
         else
+            return false
         end
 
     end
