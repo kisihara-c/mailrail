@@ -43,6 +43,9 @@ Have a good dream <3
 ## version
 ruby 2.6.8p205
 
+## env
+ORIGINS_DOMAIN
+
 ## dev start
 ```bash
 bundle install --without production

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   #root 'application#first'
   root 'mailrs#new'
+  post 'api/create', to:'mailrs#api_create'
   resources :mailrs
 end
