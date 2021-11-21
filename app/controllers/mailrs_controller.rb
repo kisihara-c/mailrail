@@ -10,7 +10,12 @@ class MailrsController < ApplicationController
         jrs = JSON.parse(request.body.read, {:symbolize_names => true})
         p "json_request => #{jrs}"
 
-        hash_ins(jrs)
+        resultBool = hash_ins(jrs)
+        if resultBool
+            render json: @mailr.inspect.to_json
+        else
+            render json: JSON.parse({"answer":"おや？　何かがおかしいようです…"})
+        end
 
     end
 
@@ -21,9 +26,7 @@ class MailrsController < ApplicationController
 
         if @mailr.save
             MainMailer.confirm(@mailr).deliver_now
-            render json: @mailr.inspect.to_json
         else
-            render json: JSON.parse({"answer":"おや？　何かがおかしいようです…"})
         end
 
     end
