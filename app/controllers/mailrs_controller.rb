@@ -12,10 +12,10 @@ class MailrsController < ApplicationController
 
         resultBool = hash_ins(jrs)
         if resultBool
-            render json: JSON.parse({"r":"送信完了"})
-            #render json: @mailr.inspect.to_json
+            render json: @mailr.inspect.to_json
         else
-            render json: JSON.parse({"r":"おや？　何かがおかしいようです…"})
+            ret = {"r":"おや？　何かがおかしいようです…"}
+            render json: ret.to_json
         end
 
     end
