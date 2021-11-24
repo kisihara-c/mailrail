@@ -11,8 +11,8 @@ task :send_mailrs => :environment do
     mailrs.each do |m|
     
         puts "sending : " + m.dest_address
-        @mailr = m
-        MainMailer.remind(@mailr).deliver_now
+        #@mailr = m
+        MainMailer.remind(m).deliver_now
         m.is_sent = true
         m.save
     
